@@ -80,30 +80,27 @@ require_once 'src/ShabatShalom.php';
 use ShabatShalom\ShabatShalom;
 
 // Default - Jerusalem (no parameters needed)
-$shabatShalom = new ShabatShalom();
+$shabat_shalom = new ShabatShalom();
 
 // Get Shabbat times for this week in Jerusalem
-$shabbatTimes = $shabatShalom->get_shabbat_times();
-print_r($shabbatTimes);
+$shabbat_times = $shabat_shalom->get_shabbat_times();
+print_r($shabbat_times);
 ```
 
 **Result**:
 ```php
-Array
-(
+Array(
     [date] => 2024-09-13
-    [candleLighting] => DateTime Object
-        (
-            [date] => 2024-09-13 18:23:00.000000
-            [timezone_type] => 3
-            [timezone] => Asia/Jerusalem
-        )
-    [havdalah] => DateTime Object
-        (
-            [date] => 2024-09-14 19:45:00.000000
-            [timezone_type] => 3
-            [timezone] => Asia/Jerusalem
-        )
+    [candle_lighting] => DateTime Object(
+        [date] => 2024-09-13 18:23:00.000000
+        [timezone_type] => 3
+        [timezone] => Asia/Jerusalem
+    )
+    [havdalah] => DateTime Object(
+        [date] => 2024-09-14 19:45:00.000000
+        [timezone_type] => 3
+        [timezone] => Asia/Jerusalem
+    )
 )
 ```
 
@@ -118,7 +115,7 @@ Array
 `date`: **DateTime** (optional)
 
 ```php
-shabatShalom->is_shabat()
+$shabat_shalom->is_shabat()
 ```
 
 ---
@@ -132,10 +129,10 @@ require_once 'src/ShabatShalom.php';
 
 use ShabatShalom\ShabatShalom;
 
-$shabatShalom = new ShabatShalom();
-$currentlyShabat = $shabatShalom->is_shabat();
+$shabat_shalom = new ShabatShalom();
+$currently_shabat = $shabat_shalom->is_shabat();
 
-var_dump($currentlyShabat);
+var_dump($currently_shabat);
 ```
 
 **Result**:
@@ -166,14 +163,13 @@ require_once 'src/ShabatShalom.php';
 
 use ShabatShalom\ShabatShalom;
 
-$telAvivInfo = ShabatShalom::get_city_info('Tel Aviv');
-print_r($telAvivInfo);
+$tel_aviv_info = ShabatShalom::get_city_info('Tel Aviv');
+print_r($tel_aviv_info);
 ```
 
 **Result**:
 ```php
-Array
-(
+Array(
     [latitude] => 32.0853
     [longitude] => 34.7818
     [timezone] => Asia/Jerusalem
@@ -202,18 +198,17 @@ require_once 'src/ShabatShalom.php';
 
 use ShabatShalom\ShabatShalom;
 
-$israeliCities = ShabatShalom::get_all_israeli_cities();
-print_r(array_keys($israeliCities));
+$israeli_cities = ShabatShalom::get_all_israeli_cities();
+print_r(array_keys($israeli_cities));
 ```
 
 **Result**:
 ```php
-Array
-(
+Array(
     [0] => Jerusalem
     [1] => Tel Aviv
     [2] => Haifa
-    [3] => Be'er Sheva
+    [3] => Beer Sheva
     [4] => Rishon LeZion
     [5] => Petah Tikva
     [6] => Ashdod
@@ -252,8 +247,8 @@ require_once 'src/ShabatShalom.php';
 use ShabatShalom\ShabatShalom;
 
 $jerusalem = new ShabatShalom(31.7690, 35.2163, 'Asia/Jerusalem');
-$jerusalemTimes = $jerusalem->get_shabbat_times();
-print_r($jerusalemTimes);
+$jerusalem_times = $jerusalem->get_shabbat_times();
+print_r($jerusalem_times);
 ```
 
 ---
@@ -267,9 +262,9 @@ require_once 'src/ShabatShalom.php';
 
 use ShabatShalom\ShabatShalom;
 
-$newYork = new ShabatShalom(40.7143, -74.0060, 'America/New_York');
-$newYorkTimes = $newYork->get_shabbat_times();
-print_r($newYorkTimes);
+$new_york = new ShabatShalom(40.7143, -74.0060, 'America/New_York');
+$new_york_times = $new_york->get_shabbat_times();
+print_r($new_york_times);
 ```
 
 ---
@@ -283,7 +278,7 @@ print_r($newYorkTimes);
 `time`: **DateTime**
 
 ```php
-shabatShalom->format_time(time)
+$shabat_shalom->format_time(time)
 ```
 
 ---
@@ -297,11 +292,11 @@ require_once 'src/ShabatShalom.php';
 
 use ShabatShalom\ShabatShalom;
 
-$shabatShalom = new ShabatShalom();
-$times = $shabatShalom->get_shabbat_times();
-$formattedTime = $shabatShalom->format_time($times['candleLighting']);
+$shabat_shalom = new ShabatShalom();
+$times = $shabat_shalom->get_shabbat_times();
+$formatted_time = $shabat_shalom->format_time($times['candle_lighting']);
 
-echo $formattedTime;
+echo $formatted_time;
 ```
 
 **Result**:
