@@ -1,0 +1,49 @@
+{
+    "name": "edanick/shabat-shalom",
+    "description": "A PHP library for calculating Jewish prayer times (zmanim) and Shabbat times",
+    "type": "library",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "edanick",
+            "email": "edanick@example.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ShabatShalom\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ShabatShalom\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test-coverage": "phpunit --coverage-html coverage"
+    },
+    "keywords": [
+        "jewish",
+        "zmanim",
+        "prayer",
+        "shabbat",
+        "hebrew",
+        "calendar",
+        "php",
+        "times"
+    ],
+    "homepage": "https://github.com/edanick/shabat-shalom-php",
+    "support": {
+        "issues": "https://github.com/edanick/shabat-shalom-php/issues",
+        "source": "https://github.com/edanick/shabat-shalom-php"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
